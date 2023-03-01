@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Tamagotchi.Models;
 using System.Collections.Generic;
-using System;
+
 
 namespace Tamagotchi.Controllers
 {
