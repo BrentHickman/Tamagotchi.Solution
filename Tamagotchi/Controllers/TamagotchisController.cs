@@ -26,5 +26,13 @@ namespace Tamagotchi.Controllers
       Pet myTamagotchi = new Pet(name);
       return RedirectToAction("Index");
     }
+    
+    [HttpPost("/tamagotchis/delete")]
+    public ActionResult DeleteAll()
+    {
+      Pet.ClearAll();
+      return View();
+    }
   }
+
 }
