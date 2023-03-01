@@ -51,6 +51,14 @@ namespace Tamagotchi.Controllers
       Pet.Rest(passInId);
       return View();
     }
+
+
+    [HttpPost("/tamagotchis/endofday")]
+    public ActionResult EndOfDay()
+    {
+      Pet.EndDay();
+      return View();
+    }
     
     [HttpPost("/tamagotchis/delete")]
     public ActionResult DeleteAll()

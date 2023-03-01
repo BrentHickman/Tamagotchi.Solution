@@ -44,6 +44,16 @@ namespace Tamagotchi.Models
       petToRest.Energy = petToRest.Energy + 3;
     }
 
+    public static void EndDay()
+    {
+      foreach (Pet tamagotchi in _instances)
+      {
+        tamagotchi.Food = tamagotchi.Food - 2;
+        tamagotchi.Happy = tamagotchi.Happy - 1;
+        tamagotchi.Energy = tamagotchi.Energy - 1;
+      }
+    }
+
     public static List<Pet> GetAll()
     {
       return _instances;
