@@ -20,15 +20,27 @@
     <ul id="pet-list">
       @foreach (Pet tamagotchi in Model)
       { 
-        <form action="/tamagotchis/feed" method="post">
         <li>Name: @tamagotchi.Name</li>
         <li>Fullness: @tamagotchi.Food</li>
         <li>Happiness: @tamagotchi.Happy</li>
         <li>Energy: @tamagotchi.Energy</li>
       
+        <form action="/tamagotchis/feed" method="post">
         <input name="passInId" value="@tamagotchi.Id" type="hidden"></input>
         <br>
         <button type="submit" name="button">Feed</button>
+        </form>
+
+        <form action="/tamagotchis/play" method="post">
+        <input name="passInId" value="@tamagotchi.Id" type="hidden"></input>
+        <br>
+        <button type="submit" name="button">Play</button>
+        </form>
+
+        <form action="/tamagotchis/rest" method="post">
+        <input name="passInId" value="@tamagotchi.Id" type="hidden"></input>
+        <br>
+        <button type="submit" name="button">Rest</button>
         </form>
       }
     </ul>
