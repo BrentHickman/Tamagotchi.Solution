@@ -21,24 +21,27 @@ namespace Tamagotchi.Models
       Energy = 5;
     }
 
-    public void Eat()
+    public static void Eat(int passedInId)
     {
-      Food = Food + 4;
-      Happy = Happy + 1;
-      Energy = Energy -1;
+      Pet petToFeed = Pet.Find(passedInId);
+      petToFeed.Food = petToFeed.Food + 4;
+      petToFeed.Happy = petToFeed.Happy + 1;
+      petToFeed.Energy = petToFeed.Energy -1;
     }
 
-    public void Play()
+    public static void Play(int passedInId)
     {
-      Food = Food - 1;
-      Happy = Happy + 4;
-      Energy = Energy - 2;
+      Pet petToPlay = Pet.Find(passedInId);
+      petToPlay.Food = petToPlay.Food - 1;
+      petToPlay.Happy = petToPlay.Happy + 4;
+      petToPlay.Energy = petToPlay.Energy - 2;
     }
-    public void Rest()
+    public static void Rest(int passedInId)
     {
-      Food = Food - 2;
-      Happy = Happy + 1;
-      Energy = Energy + 3;
+      Pet petToRest = Pet.Find(passedInId);
+      petToRest.Food = petToRest.Food - 2;
+      petToRest.Happy = petToRest.Happy + 1;
+      petToRest.Energy = petToRest.Energy + 3;
     }
 
     public static List<Pet> GetAll()
