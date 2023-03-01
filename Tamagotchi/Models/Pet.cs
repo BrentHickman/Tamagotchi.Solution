@@ -1,17 +1,17 @@
 using System.Collections.Generic;
 
-namespace Tamagotchi.Models
+namespace Pet.Models
 {
-  public class Tamagotchi
+  public class Pet
   {
     public string Name { get; set; }
     public int Id { get; }
     public int Food;
     public int Happy;
     public int Energy;
-    private static List<Tamagotchi> _instances = new List<Tamagotchi> { };
+    private static List<Pet> _instances = new List<Pet> { };
 
-    public Tamagotchi(string name)
+    public Pet(string name)
     {
       Name = name;
       _instances.Add(this);
@@ -41,7 +41,7 @@ namespace Tamagotchi.Models
       Energy = Energy + 3;
     }
 
-    public static List<Tamagotchi> GetAll()
+    public static List<Pet> GetAll()
     {
       return _instances;
     }
@@ -51,7 +51,7 @@ namespace Tamagotchi.Models
       _instances.Clear();
     }
 
-    public static Tamagotchi Find(int searchId)
+    public static Pet Find(int searchId)
     {
       return _instances[searchId-1];
     }
