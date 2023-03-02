@@ -54,6 +54,17 @@ namespace Tamagotchi.Models
       }
     }
 
+    public static void DeathCheck()
+    {
+      foreach (Pet tamagotchi in _instances)
+      {
+        if(tamagotchi.Food < 0 || tamagotchi.Happy < 0 || tamagotchi.Energy < 0)
+        {
+          tamagotchi.Name = tamagotchi.Name + " is Dead!";
+        }
+      }
+    }
+
     public static List<Pet> GetAll()
     {
       return _instances;

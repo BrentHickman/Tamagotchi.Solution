@@ -33,6 +33,7 @@ namespace Tamagotchi.Controllers
     {
       string petName = Pet.Find(passInId).Name;
       Pet.Eat(passInId);
+      Pet.DeathCheck();
       return View();
     }
 
@@ -41,6 +42,7 @@ namespace Tamagotchi.Controllers
     {
       string petName = Pet.Find(passInId).Name;
       Pet.Play(passInId);
+      Pet.DeathCheck();
       return View();
     }
 
@@ -49,6 +51,7 @@ namespace Tamagotchi.Controllers
     {
       string petName = Pet.Find(passInId).Name;
       Pet.Rest(passInId);
+      Pet.DeathCheck();
       return View();
     }
 
@@ -57,6 +60,7 @@ namespace Tamagotchi.Controllers
     public ActionResult EndOfDay()
     {
       Pet.EndDay();
+      Pet.DeathCheck();
       return View();
     }
     

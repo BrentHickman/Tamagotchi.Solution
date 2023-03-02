@@ -21,10 +21,14 @@
       @foreach (Pet tamagotchi in Model)
       { 
         <li>Name: @tamagotchi.Name</li>
+        @if(@tamagotchi.Food >= 0 && @tamagotchi.Happy >= 0 && @tamagotchi.Energy >= 0)
+        {
         <li>Fullness: @tamagotchi.Food</li>
         <li>Happiness: @tamagotchi.Happy</li>
         <li>Energy: @tamagotchi.Energy</li>
       
+
+
         <form action="/tamagotchis/feed" method="post">
         <input name="passInId" value="@tamagotchi.Id" type="hidden"></input>
         <br>
@@ -42,6 +46,7 @@
         <br>
         <button type="submit" name="button">Rest</button>
         </form>
+        }
       }
 
     </ul>
